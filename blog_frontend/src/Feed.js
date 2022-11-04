@@ -6,8 +6,32 @@ function Feed(){
 
     return(
         <div>
+            <br></br>
+            <Card className="text-center">
+                <Card.Header>All blogs</Card.Header>
+                <Card.Body>
+                    <Card.Title>Special title treatment</Card.Title>
+                    <Card.Text>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, reiciendis fugit velit ipsam facilis error voluptas? Amet, necessitatibus. Cupiditate culpa dignissimos dolorem cumque obcaecati voluptates quia tempore perferendis, aut aliquid?
+                    </Card.Text>
+                </Card.Body>
+                <Card.Footer className="text-muted">2 days ago</Card.Footer>
+            </Card>
+        ,<br></br>
+        <br></br>
             <Card className="text-center">
                 <Card.Header>Featured</Card.Header>
+                <Card.Body>
+                    <Card.Title>All blogs</Card.Title>
+                    <Card.Text>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, reiciendis fugit velit ipsam facilis error voluptas? Amet, necessitatibus. Cupiditate culpa dignissimos dolorem cumque obcaecati voluptates quia tempore perferendis, aut aliquid?
+                    </Card.Text>
+                </Card.Body>
+                <Card.Footer className="text-muted">2 days ago</Card.Footer>
+            </Card>
+
+            <Card className="text-center">
+                <Card.Header>All blogs</Card.Header>
                 <Card.Body>
                     <Card.Title>Special title treatment</Card.Title>
                     <Card.Text>
@@ -18,29 +42,7 @@ function Feed(){
             </Card>
 
             <Card className="text-center">
-                <Card.Header>Featured</Card.Header>
-                <Card.Body>
-                    <Card.Title>Special title treatment</Card.Title>
-                    <Card.Text>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, reiciendis fugit velit ipsam facilis error voluptas? Amet, necessitatibus. Cupiditate culpa dignissimos dolorem cumque obcaecati voluptates quia tempore perferendis, aut aliquid?
-                    </Card.Text>
-                </Card.Body>
-                <Card.Footer className="text-muted">2 days ago</Card.Footer>
-            </Card>
-
-            <Card className="text-center">
-                <Card.Header>Featured</Card.Header>
-                <Card.Body>
-                    <Card.Title>Special title treatment</Card.Title>
-                    <Card.Text>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, reiciendis fugit velit ipsam facilis error voluptas? Amet, necessitatibus. Cupiditate culpa dignissimos dolorem cumque obcaecati voluptates quia tempore perferendis, aut aliquid?
-                    </Card.Text>
-                </Card.Body>
-                <Card.Footer className="text-muted">2 days ago</Card.Footer>
-            </Card>
-
-            <Card className="text-center">
-                <Card.Header>Featured</Card.Header>
+                <Card.Header>All blogs</Card.Header>
                 <Card.Body>
                     <Card.Title>Special title treatment</Card.Title>
                     <Card.Text>

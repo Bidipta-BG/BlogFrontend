@@ -6,6 +6,7 @@ import Navigationbar from './Navbar';
 import Feed from './Feed';
 import Login from './Login';
 import Register from './Register';
+import Profile from './Profile';
 
 
 
@@ -14,15 +15,15 @@ const App = () => {
       <div>
           <Navigationbar />
           {/* <Login/> */}
-          <Register/>
-          {/* <Container>
+          {/* <Register/> */}
+          <Container>
               <Row>
                   <Col lg={2}>sm=3</Col>
                   <Col lg={10}>
-                      <Feed /> 
+                      <Profile /> 
                   </Col>
               </Row>
-          </Container> */}
+           </Container> 
       </div>
   )
 }
