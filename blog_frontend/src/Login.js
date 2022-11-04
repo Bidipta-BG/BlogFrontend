@@ -1,31 +1,33 @@
 import React from 'react'
 
-import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
-import Row from 'react-bootstrap/Row';
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
 
 const Login = () => {
   return (
-    <div>
-          <Form>
-              <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
-                  <Form.Label column sm="2">
-                      Email
-                  </Form.Label>
-                  <Col sm="10">
-                      <Form.Control plaintext readOnly defaultValue="email@example.com" />
-                  </Col>
-              </Form.Group>
+      <div class="row">
+        
+          <div class="w-50 mx-auto mt-5">
+              <h1>Login</h1>
+              <form>
+                  <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Email address</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                  </div>
+                  <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label">Password</label>
+                      <input type="password" class="form-control" id="exampleInputPassword1" />
+                  </div>
+                  <div class="mb-3 form-check">
+                      <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+                          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+           </div>
 
-              <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
-                  <Form.Label column sm="2">
-                      Password
-                  </Form.Label>
-                  <Col sm="10">
-                      <Form.Control type="password" placeholder="Password" />
-                  </Col>
-              </Form.Group>
-          </Form>
     </div>
   )
 }

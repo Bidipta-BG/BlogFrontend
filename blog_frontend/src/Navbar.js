@@ -1,28 +1,37 @@
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import Button from 'react-bootstrap/Button';
+
 
 function Navigationbar() {
     return (
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-            <Container>
-                <Navbar.Brand href="#home">Blog-Website</Navbar.Brand>
-                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className="me-auto">
-                        <Nav.Link href="#features">Home</Nav.Link>
-                        <Nav.Link href="#pricing">Profile</Nav.Link>
-                        
-                    </Nav>
-                    <Nav>
-                        <Button  variant="primary">Login</Button>{' '}
-                        <Button className="ms-5" variant="primary">Register</Button>{' '}
-                    </Nav>
-                </Navbar.Collapse>
-            </Container>
-        </Navbar>
+        <div>
+            <nav className="navbar navbar-expand-lg  navbar-dark bg-dark bg-gradient">
+                <div className="container-fluid">
+                    <a className="navbar-brand" href="#">Navbar</a>
+                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
+                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li className="nav-item">
+                                <a className="nav-link active" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="#">Profile</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="#">Create Blog</a>
+                            </li>
+                           
+                        </ul>
+
+                    <div className="me-5">
+                            <button type="button" className="btn btn-outline-info me-3">Login</button>
+                            <button type="button" className="btn btn-outline-success">Register</button>
+                    </div>
+                       
+                    </div>
+                </div>
+            </nav>
+        </div>
     );
 }
 

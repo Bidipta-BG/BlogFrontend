@@ -1,41 +1,36 @@
 import React from 'react'
-import Form from 'react-bootstrap/Form';
-import InputGroup from 'react-bootstrap/InputGroup';
-import FloatingLabel from 'react-bootstrap/FloatingLabel';
+
 
 const Register = () => {
   return (
-    <div>
-        <br />
-          <Form.Select aria-label="Default select example">
-              <option>TITLE</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
-          </Form.Select>
-
-          <br />
-          <br />
-
-          <InputGroup className="mb-3">
-              <InputGroup.Text>First and last name</InputGroup.Text>
-              <Form.Control aria-label="First name" />
-              <Form.Control aria-label="Last name" />
-          </InputGroup>
-
-          <>
-              <FloatingLabel
-                  controlId="floatingInput"
-                  label="Email address"
-                  className="mb-3"
-              >
-                  <Form.Control type="email" placeholder="name@example.com" />
-              </FloatingLabel>
-              <FloatingLabel controlId="floatingPassword" label="Password">
-                  <Form.Control type="password" placeholder="Password" />
-              </FloatingLabel>
-          </>
-    </div>
+      <div class="row">
+        
+          <div class="w-50 mx-auto mt-5">
+              <h1>Register</h1>
+            <form>
+              <div class="mt-4">
+                  <label class="form-label">First Name</label>
+                  <input class="form-control" type="text" placeholder="Enter First Name" />
+              </div>
+              <div class="mt-4">
+                  <label class="form-label">Last Name</label>
+                  <input class="form-control" type="text" placeholder="Enter Last Name" />
+              </div>
+              <div class="mt-4">
+                  <label class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" />
+              </div>
+              <div class="mt-4">
+                  <label class="form-label">Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" />
+              </div>
+              <div class="mt-4">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </form>
+        </div>
+         
+        </div>
   )
 }
 
