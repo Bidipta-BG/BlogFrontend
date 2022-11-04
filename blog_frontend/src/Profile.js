@@ -1,92 +1,35 @@
 import React from 'react'
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-import Dropdown from 'react-bootstrap/Dropdown';
-import Modal from 'react-bootstrap/Modal';
+import Filter from './Filter';
 
 function Profile(){
 
     return(
         <div>
-            <Dropdown className="d-inline mx-2">
-        <Dropdown.Toggle id="dropdown-autoclose-true">
-          Default Dropdown
-        </Dropdown.Toggle>
-
-        <Dropdown.Menu>
-          <Dropdown.Item href="#">Menu Item</Dropdown.Item>
-          <Dropdown.Item href="#">Menu Item</Dropdown.Item>
-          <Dropdown.Item href="#">Menu Item</Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
-
-      <Dropdown className="d-inline mx-2" autoClose="inside">
-        <Dropdown.Toggle id="dropdown-autoclose-inside">
-          Clickable Outside
-        </Dropdown.Toggle>
-
-        <Dropdown.Menu>
-          <Dropdown.Item href="#">Menu Item</Dropdown.Item>
-          <Dropdown.Item href="#">Menu Item</Dropdown.Item>
-          <Dropdown.Item href="#">Menu Item</Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
-
-      <Dropdown className="d-inline mx-2" autoClose="outside">
-        <Dropdown.Toggle id="dropdown-autoclose-outside">
-          Clickable Inside
-        </Dropdown.Toggle>
-
-        <Dropdown.Menu>
-          <Dropdown.Item href="#">Menu Item</Dropdown.Item>
-          <Dropdown.Item href="#">Menu Item</Dropdown.Item>
-          <Dropdown.Item href="#">Menu Item</Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
-
-            {/* <br></br> */}
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <Card className="text-center">
-                <Card.Header>Create blog</Card.Header>
-                <Card.Body>
-                    <Card.Title>Body</Card.Title>
-                    <Card.Text>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, reiciendis fugit velit ipsam facilis error voluptas? Amet, necessitatibus. Cupiditate culpa dignissimos dolorem cumque obcaecati voluptates quia tempore perferendis, aut aliquid?
-                    </Card.Text>
-                </Card.Body>
-                <Card.Footer className="text-muted">tags,category,subcategory</Card.Footer>
-            </Card>
-        ,<br></br>
-        <br></br>
-        <Modal.Dialog>
-      <Modal.Header closeButton>
-        <Modal.Title>Modal title</Modal.Title>
-      </Modal.Header>
-
-      <Modal.Body>
-        <p>Modal body text goes here.</p>
-      </Modal.Body>
-
-      <Modal.Footer>
-        <Button variant="secondary">Close</Button>
-        <Button variant="primary">Save changes</Button>
-      </Modal.Footer>
-    </Modal.Dialog>
-            <br></br>
-        {/* <br></br> */}
-            <Card className="text-center">
-                <Card.Header>Users own blog</Card.Header>
-                <Card.Body>
-                    <Card.Title>title of the blog</Card.Title>
-                    <Card.Text>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, reiciendis fugit velit ipsam facilis error voluptas? Amet, necessitatibus. Cupiditate culpa dignissimos dolorem cumque obcaecati voluptates quia tempore perferendis, aut aliquid?
-                    </Card.Text>
-                </Card.Body>
-                <Card.Footer className="text-muted">2 days ago</Card.Footer>
-            </Card>
+        <div class="container">
+          <div class="row">
+            <div class="col-2">
+              <Filter title="Tags" />
+              <Filter title="Category" />
+              <Filter title="Sub-Category" />
+            </div>
+            <div class="col-10">
+              <div className='mt-4'>
+                <div class="card text-center">
+                  <div class="d-flex justify-content-between card-header">
+                    <p>-Unmesh <br /><div className='bg-secondary bg-gradient'>technology</div></p>
+                    <h5>Importance of React </h5>
+                    <p>24 March</p>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit obcaecati illum aliquam magni, quis mollitia ratione placeat molestias doloribus? Tempora doloribus maiores vitae. Adipisci, inventore. Sint, illo. Cum aspernatur modi nobis corporis odit delectus officia eveniet voluptate explicabo ullam voluptatem molestias labore quia id iusto, necessitatibus et magnam error quasi accusamus porro ducimus, nam laboriosam dolorem? Fuga sint eaque ab adipisci unde. Praesentium, iusto a repellat voluptate consequatur asperiores quam saepe doloribus sapiente vero ullam soluta ratione harum modi. Quibusdam aliquid libero sint veniam minus quas quia ducimus aspernatur repudiandae porro in, hic dolor a natus excepturi quis sapiente ipsum.</h5>
+                    <button type="button" class="btn btn-warning me-3">Update</button>
+                    <button type="button" class="btn btn-danger">Delete</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
             
         </div>

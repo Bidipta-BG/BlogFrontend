@@ -1,4 +1,4 @@
-
+import { Link, NavLink, Router } from "react-router-dom"
 
 function Navigationbar() {
     return (
@@ -12,20 +12,22 @@ function Navigationbar() {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href="#">Home</a>
+                                <Link className="nav-link active" aria-current="page" to="/">Home</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">Profile</a>
+                                <Link className="nav-link" to="/profile">Profile</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">Create Blog</a>
+                                <Link className="nav-link" to="/create">Create Blog</Link>
                             </li>
                            
                         </ul>
 
                     <div className="me-5">
-                            <button type="button" className="btn btn-outline-info me-3">Login</button>
-                            <button type="button" className="btn btn-outline-success">Register</button>
+                        
+                        
+                            <Link to="/login" type="button" className="btn btn-outline-info me-3">Login</Link>
+                            <Link to="/register" type="button" className="btn btn-outline-success">Register</Link>
                     </div>
                        
                     </div>

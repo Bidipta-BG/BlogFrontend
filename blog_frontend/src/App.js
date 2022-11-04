@@ -1,7 +1,4 @@
 import React from 'react'
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import Navigationbar from './Navbar';
 import Feed from './Feed';
 import Login from './Login';
@@ -10,27 +7,38 @@ import Profile from './Profile';
 import Filter from './Filter';
 import Createblog from './Createblog';
 
+import {
+    BrowserRouter as Router,
+    Routes,
+    Route,
+    Link
+} from "react-router-dom";
+
 
 
 const App = () => {
   return (
       <div>
-          <Navigationbar />
-          <Createblog/>
+        
+        
+        <Router>
+              <Navigationbar />
+              <Routes>
+                  <Route path="/" element={<Feed />} />
+                  <Route path="/login" element={<Login />} />
+                  <Route path="/register" element={<Createblog />} />
+                  <Route path="/profile" element={<Profile />} />
+                  <Route path="/create" element={<Createblog />} />
+            </Routes>
+
+        </Router>
+
+          
+          {/* <Createblog/> */}
+          {/* <Profile/> */}
           {/* <Login/> */}
           {/* <Register/> */}
-          {/* <div class="container">
-              <div class="row">
-                  <div class="col-2">
-                      <Filter title="Tags"/>
-                      <Filter title = "Category"/>
-                      <Filter title="Sub-Category" />
-                  </div>
-                  <div class="col-10">
-                      <Feed/>
-                  </div>
-              </div>
-          </div> */}
+          {/* <Feed/> */}
       </div>
   )
 }
