@@ -19,7 +19,7 @@ function Feed(){
             <div class="container">
               <div class="row">
                   <div class="col-2">
-                      <Filter title="Tags"/>
+                      <Filter  title="Tags"/>
                       <Filter title = "Category"/>
                       <Filter title="Sub-Category" />
                   </div>
