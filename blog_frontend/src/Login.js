@@ -28,8 +28,6 @@ const Login = () => {
         if(result.data){
           localStorage.setItem("user",JSON.stringify(result))
           navigate("/profile")
-        }else{
-          alert("plz provide valid details")
         }
     }
   return (
