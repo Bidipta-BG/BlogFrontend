@@ -16,29 +16,29 @@ function Feed(){
     return(
 
         
-            <div class="container">
-              <div class="row">
-                  <div class="col-2">
+            <div className="container">
+              <div className="row">
+                  <div className="col-2">
                       <Filter  title="Tags"/>
                       <Filter title = "Category"/>
                       <Filter title="Sub-Category" />
                   </div>
 
                 {console.log(blogs)}
-                    <div class="col-10">
+                    <div className="col-10">
                     {blogs.map(ele => 
                         <div className='mt-4'>
-                            <div class="card text-center">
+                            <div className="card text-center">
 
 
-                                <div class="d-flex justify-content-between card-header">
+                                <div className="d-flex justify-content-between card-header">
                                     <p>{ele.authorId.fname + ' ' + ele.authorId.lname} <br /><div className='bg-secondary bg-gradient'>{ele.category}</div></p>
                                     <h5>{ele.title} </h5>
                                     <p>{ele.publishedAt.slice(0,10)}</p>
                                 </div>
 
-                                <div class="card-body">
-                                    <h5 class="card-title">{ele.body}</h5>
+                                <div className="card-body">
+                                    <h5 className="card-title">{ele.body}</h5>
 
                                 </div>
                             </div>

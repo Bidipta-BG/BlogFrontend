@@ -1,51 +1,93 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 
 const Register =  () => {
+
+    useEffect(() => { document.title = 'Register' }, [])
+
+    const [title, setTitle] = useState("")
     const [firstName,setFirstName] = useState("")
     const [lastName,setLastName] = useState("")
     const [email,setEmail] = useState("")
     const [password,setPassword] = useState("")
+
+    let navigate = useNavigate()
+
     const submit = async ()=>{
-        let result = fetch("localhost:4000/authors",{
+        let data = { fname: firstName, lname: lastName,title: title ,email: email, password: password }
+        // console.log(data)
+        let result = fetch("http://localhost:4000/authors",{
             method:'post',
-            body:JSON.stringify(firstName,lastName,email,password),
+            body:JSON.stringify(data),
             headers:{
                 'Content-type' : 'application/json'
             }  
         })
-        result = await result.json()
-        console.log(result);
+            .then(res => res.json()
+                .then((response) => {
+                    // console.log(response);
+                    if (response.status === true) {
+                        console.log(response)
+                        alert(response.message)
+                        setFirstName("")
+                        setLastName("")
+                        setEmail("")
+                        setPassword("")
+                        navigate("/profile")
+                    } else {
+                        console.log(response.message)
+                        alert(response.message);
+                    }
+                }))
+        // result = await result.json()
+        // console.log(result);
     }
-  return (
-      <div class="row">
+
+
+    function submitAction(x){
+        x.preventDefault()
+
         
-          <div class="w-50 mx-auto mt-5">
+    }
+
+  return (
+      <div className="row">
+        
+          <div className="w-50 mx-auto mt-5">
               <h1>Register</h1>
-            <form>
-              <div class="mt-4">
-                  <label class="form-label">First Name</label>
-                  <input class="form-control" type="text" placeholder="Enter First Name"
+            <form onSubmit={submitAction}>
+                <div>
+                      <label for="exampleFormControlTextarea1" class="form-label">Choose a Title</label>
+                      <select value={title} onChange={(e)=>setTitle(e.target.value)} class="form-select form-select-sm" aria-label=".form-select-sm example">
+                          <option value="Mr">Mr</option>
+                          <option value="Miss">Miss</option>
+                          <option value="Mrs">Mrs</option>
+                      </select>
+                </div>
+              <div className="mt-4">
+                  <label className="form-label">First Name</label>
+                  <input className="form-control" type="text" placeholder="Enter First Name"
                   value={firstName} onChange={(e)=>setFirstName(e.target.value)} />
               </div>
-              <div class="mt-4">
-                  <label class="form-label">Last Name</label>
-                  <input class="form-control" type="text" placeholder="Enter Last Name" 
+              <div className="mt-4">
+                  <label className="form-label">Last Name</label>
+                  <input className="form-control" type="text" placeholder="Enter Last Name" 
                   value={lastName} onChange={(e)=>setLastName(e.target.value)}/>
               </div>
-              <div class="mt-4">
-                  <label class="form-label">Email address</label>
-                  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" 
+              <div className="mt-4">
+                  <label className="form-label">Email address</label>
+                  <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com" 
                   value={email} onChange={(e)=>setEmail(e.target.value)}/>
               </div>
-              <div class="mt-4">
-                  <label class="form-label">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" 
+              <div className="mt-4">
+                  <label className="form-label">Password</label>
+                  <input type="password" className="form-control" id="exampleInputPassword1" 
                   value={password} onChange={(e)=>setPassword(e.target.value)}/>
               </div>
-              <div class="mt-4">
-                  <button onClick={submit} type="submit" class="btn btn-primary">Submit</button>
+              <div className="mt-4">
+                  <button onClick={submit} type="submit" className="btn btn-primary">Submit</button>
               </div>
             </form>
         </div>

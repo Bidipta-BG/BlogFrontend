@@ -21,28 +21,28 @@ const Createblog = () => {
     }
   return (
     <div>
-          <div class="row">
+          <div className="row">
 
-              <div class="w-50 mx-auto mt-3">
+              <div className="w-50 mx-auto mt-3">
                   <h1>Create Blog</h1>
                   <form>
-                      <div class="mt-4">
-                          <label class="form-label">Title</label>
-                          <input class="form-control" type="text" placeholder="Title of the blog" 
+                      <div className="mt-4">
+                          <label className="form-label">Title</label>
+                          <input className="form-control" type="text" placeholder="Title of the blog" 
                           value={title} onChange={(e)=>setTitle(e.target.value)}/>
                       </div>
-                      <div class="mt-3">
-                          <label for="exampleFormControlTextarea1" class="form-label">Body</label>
-                          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      <div className="mt-3">
+                          <label for="exampleFormControlTextarea1" className="form-label">Body</label>
+                          <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                       </div>
-                      <div class="mt-4">
-                          <label class="form-label">Tags</label>
-                          <input class="form-control" type="text" placeholder="Enter tags seperated by comma" 
+                      <div className="mt-4">
+                          <label className="form-label">Tags</label>
+                          <input className="form-control" type="text" placeholder="Enter tags seperated by comma" 
                           value={tags} onChange={(e)=>setTags(e.target.value)}/>
                       </div>
-                      <div class="mt-4">
-                          <label for="exampleFormControlTextarea1" class="form-label">Choose a Category</label>
-                          <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                      <div className="mt-4">
+                          <label for="exampleFormControlTextarea1" className="form-label">Choose a Category</label>
+                          <select className="form-select form-select-sm" aria-label=".form-select-sm example">
                               <option value="1">Technology</option>
                               <option value="2">Sci-Fi</option>
                               <option value="3">Entertainment</option>
@@ -52,13 +52,13 @@ const Createblog = () => {
                               <option value="7">International</option>
                           </select>
                       </div>
-                      <div class="mt-4">
-                          <label class="form-label">Subcategory</label>
-                          <input class="form-control" type="text" placeholder="Enter keywords of your blog"
+                      <div className="mt-4">
+                          <label className="form-label">Subcategory</label>
+                          <input className="form-control" type="text" placeholder="Enter keywords of your blog"
                           value={subCategory} onChange={(e)=>setSubcategory(e.target.value)} />
                       </div>
-                      <div class="mt-4">
-                          <button onClick={submit} type="submit" class="btn btn-primary">Create Blog</button>
+                      <div className="mt-4">
+                          <button onClick={submit} type="submit" className="btn btn-primary">Create Blog</button>
                       </div>
                   </form>
               </div>
