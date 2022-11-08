@@ -8,16 +8,16 @@ const Register =  () => {
     useEffect(() => { document.title = 'Register' }, [])
 
     const [title, setTitle] = useState("")
-    const [firstName,setFirstName] = useState("")
-    const [lastName,setLastName] = useState("")
+    const [fname,setFirstName] = useState("")
+    const [lname,setLastName] = useState("")
     const [email,setEmail] = useState("")
     const [password,setPassword] = useState("")
 
     let navigate = useNavigate()
 
     const submit = async ()=>{
-        let data = { fname: firstName, lname: lastName,title: title ,email: email, password: password }
-        // console.log(data)
+        let data = { fname, lname, title ,email,password }
+        console.log(data)
         let result = fetch("http://localhost:4000/authors",{
             method:'post',
             body:JSON.stringify(data),
@@ -27,7 +27,7 @@ const Register =  () => {
         })
             .then(res => res.json()
                 .then((response) => {
-                    // console.log(response);
+                    console.log(response);
                     if (response.status === true) {
                         console.log(response)
                         alert(response.message)
@@ -35,7 +35,7 @@ const Register =  () => {
                         setLastName("")
                         setEmail("")
                         setPassword("")
-                        navigate("/profile")
+                        navigate("/login")
                     } else {
                         console.log(response.message)
                         alert(response.message);
@@ -48,9 +48,8 @@ const Register =  () => {
 
     function submitAction(x){
         x.preventDefault()
-
-        
     }
+    
 
   return (
       <div className="row">
@@ -61,6 +60,7 @@ const Register =  () => {
                 <div>
                       <label for="exampleFormControlTextarea1" class="form-label">Choose a Title</label>
                       <select value={title} onChange={(e)=>setTitle(e.target.value)} class="form-select form-select-sm" aria-label=".form-select-sm example">
+                          <option value="Select">Select....</option>
                           <option value="Mr">Mr</option>
                           <option value="Miss">Miss</option>
                           <option value="Mrs">Mrs</option>
@@ -69,12 +69,12 @@ const Register =  () => {
               <div className="mt-4">
                   <label className="form-label">First Name</label>
                   <input className="form-control" type="text" placeholder="Enter First Name"
-                  value={firstName} onChange={(e)=>setFirstName(e.target.value)} />
+                  value={fname} onChange={(e)=>setFirstName(e.target.value)} />
               </div>
               <div className="mt-4">
                   <label className="form-label">Last Name</label>
                   <input className="form-control" type="text" placeholder="Enter Last Name" 
-                  value={lastName} onChange={(e)=>setLastName(e.target.value)}/>
+                  value={lname} onChange={(e)=>setLastName(e.target.value)}/>
               </div>
               <div className="mt-4">
                   <label className="form-label">Email address</label>

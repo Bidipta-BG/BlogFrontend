@@ -1,10 +1,12 @@
 import React from 'react'
 import Filter from './Filter';
+import userId from './Login'
 
 function Profile(){
 
     return(
         <div>
+          {console.log(userId)}
         <div className="container">
           <div className="row">
             <div className="col-2">

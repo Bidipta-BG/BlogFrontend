@@ -3,6 +3,8 @@ import { useEffect } from 'react';
 
 import { useNavigate } from 'react-router-dom';
 
+
+
 const Login = () => {
 
   useEffect(() => { document.title = 'Login' }, [])
@@ -13,8 +15,6 @@ const Login = () => {
 
     const  submitButton = async ()=>
     {
-      // console.log("first")
-        alert('submit called')
         console.log(email,password);
         let result = await fetch("http://localhost:4000/loginUser",{
           method:'post',
@@ -25,11 +25,12 @@ const Login = () => {
         })
           .then(res => res.json()
             .then((response) => {
-              // console.log(response);
+              console.log(response);
               if (response.status === true) {
               console.log(response)
+                navigate("/profile")
               } else {
-                console.log("object");
+                alert(response.message)
               }
             }))
         // result = await result.json()
@@ -37,7 +38,7 @@ const Login = () => {
         // if(result.data){
         //   console.log(result.data);
           // localStorage.setItem("user",JSON.stringify(result))
-          navigate("/profile")
+          
         // }
 
     }
@@ -64,10 +65,10 @@ const Login = () => {
                       value={password}
                       onChange={(e)=>setPassword(e.target.value)}/>
                   </div>
-                  <div className="mb-3 form-check">
+                  {/* <div className="mb-3 form-check">
                       <input type="checkbox" className="form-check-input" id="exampleCheck1" />
                           <label className="form-check-label" for="exampleCheck1">Check me out</label>
-                  </div>
+                  </div> */}
                   <button onClick={submitButton} type="submit" className="btn btn-primary">Submit</button>
               </form>
            </div>
@@ -76,4 +77,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default{Login}
