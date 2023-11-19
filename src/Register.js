@@ -17,8 +17,8 @@ const Register =  () => {
 
     const submit = async ()=>{
         let data = { fname, lname, title ,email,password }
-        console.log(data)
-        let result = fetch("http://localhost:4000/authors",{
+        // console.log(data)
+        fetch("http://localhost:4000/authors",{
             method:'post',
             body:JSON.stringify(data),
             headers:{
@@ -55,7 +55,7 @@ const Register =  () => {
       <div className="row">
         
           <div className="w-50 mx-auto mt-5">
-              <h1>Register</h1>
+              <h1>Register to Create Blog</h1>
             <form onSubmit={submitAction}>
                 <div>
                       <label for="exampleFormControlTextarea1" class="form-label">Choose a Title</label>
